@@ -17,18 +17,6 @@ namespace IMC_Andri.ClsIMC
         public int peso { get; set; }
         public double IMC { get; set; }
 
-        public String datos()
-        {
-            this.Nombre = "Andri";
-            this.edad = 21;
-            this.altura = 185;
-            this.sexo = 'M';
-            this.peso = 140;
-            double pesoKG = this.peso / KG;
-
-            return $"\n Nombre: {Nombre} \n Edad: {edad} \n Altura: {altura} \n Sexo: {sexo} \n Peso en Lbs:{peso} \n Peso en KG: {pesoKG}";
-
-        }
 
         public String resultado()
 
@@ -45,29 +33,31 @@ namespace IMC_Andri.ClsIMC
             this.IMC = pesoKG / altura;
 
 
-            if (pesoKG < 40 && this.IMC < 18.5)
+            if ((pesoKG < 53) && (this.IMC < 18.5) && (edad < 18) && (altura < 155))
             {
-                return $"Tu IMC es:\t" + IMC + "\tTe encuentras en el rango DELGADO";
+                return $"Este es el resultado \t" + Nombre + "\nPara tu edad:" + edad + "\t tu sexo:" + sexo + "\ttu altura:" + estaturainmts +"mts" + "\nTu IMC es:\t" + IMC + "\tTe encuentras en el rango DELGADO";
             }
 
-            else if (pesoKG < 85 & this.IMC >= 18 && this.IMC < 25)
+            else if ((pesoKG < 85) && (this.IMC >= 18) && (this.IMC < 25) && (altura < 180))
             {
-                return $"Tu IMC es:\t" + IMC + "\tTe encuentras en el rango NORMAL";
+                return $"Este es el resultado \t" + Nombre + "\nPara tu edad:" + edad + "\t tu sexo:" + sexo + "\ttu altura:" + estaturainmts + "mts" + "\nTu IMC es:\t" + IMC + "\tTe encuentras en el rango NORMAL";
             }
 
             else if (pesoKG < 100  & this.IMC >= 25 && this.IMC < 27)
             {
-                return $"TU IMC es:\t" + IMC + "\tTe encuentras en el rango SOBREPESO";
+                return $"Este es el resultado \t" + Nombre + "\nPara tu edad:" + edad + "\t tu sexo:" + sexo + "\ttu altura:" + estaturainmts + "mts" + "\nTu IMC es:\t" + IMC + "\tTe encuentras en el rango SOBREPESO";
             }
 
             else if (pesoKG > 120 && this.IMC > 27)
             {
-                return $"Tu IMC es: \t" + IMC + "\tTe encuentras en el rango OBESIDAD";
+                return $"Este es el resultado \t" + Nombre + "\nPara tu edad:" + edad + "\t tu sexo:" + sexo + "\ttu altura:" + estaturainmts + "mts" + "\nTu IMC es:\t" + IMC + "\tTe encuentras en el rango OBESIDAD";
             }
 
        
             return this.IMC.ToString();
 
         }
+     
+        }
+
     }
-}
